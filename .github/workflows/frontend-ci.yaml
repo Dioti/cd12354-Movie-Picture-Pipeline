@@ -75,4 +75,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Build frontend application
-        run: docker build --build-arg=REACT_APP_MOVIE_API_URL=${{ env.REACT_APP_MOVIE_API_URL }} --tag=mp-frontend:latest .
+        run: docker build --build-arg=REACT_APP_MOVIE_API_URL=${{ env.REACT_APP_MOVIE_API_URL }} --tag=mp-frontend:${{ github.sha }} .
