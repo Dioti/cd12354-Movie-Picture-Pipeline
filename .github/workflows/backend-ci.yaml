@@ -1,11 +1,11 @@
 name: Backend Continuous Integration
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
     types: [opened, reopened, synchronize]
     paths: 'starter/backend/**'
-  workflow_dispatch:
 
 env:
   PYTHON_VERSION: 3.9
@@ -56,4 +56,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Build backend application
-        run: docker build --tag mp-backend:latest .
+        run: docker build --tag mp-backend:${{ github.sha }} .
