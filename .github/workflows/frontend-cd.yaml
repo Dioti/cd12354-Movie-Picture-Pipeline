@@ -8,7 +8,7 @@ on:
 
 env:
   NODE_VERSION: 18.x
-  REACT_APP_MOVIE_API_URL: a871176af3b0e4a10a6acf588cf4fcf4-2093629547.us-east-1.elb.amazonaws.com
+  REACT_APP_MOVIE_API_URL: http://a871176af3b0e4a10a6acf588cf4fcf4-2093629547.us-east-1.elb.amazonaws.com
   AWS_REGION: us-east-1
   IMAGE_NAME: mp-frontend
   CLUSTER_NAME: frontend
@@ -88,6 +88,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build --build-arg=REACT_APP_MOVIE_API_URL=${{ env.REACT_APP_MOVIE_API_URL }} -t ${{ env.IMAGE_NAME }}:${{ github.sha }} .
+          echo "REACT_APP_MOVIE_API_URL=$REACT_APP_MOVIE_API_URL"
           docker tag ${{ env.IMAGE_NAME }}:${{ github.sha }} ${{ steps.ecr-login.outputs.registry }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
       - name: Push Docker image to AWS ECR
         run:
