@@ -6,5 +6,5 @@ resources:
 namespace: default
 images:
   - name: backend
-    newName: ${{ steps.ecr-login.outputs.registry }}/${{ env.IMAGE_NAME }}
-    newTag: ${{ github.sha }}
+    newName: ${IMAGE_REPOSITORY}/mp-backend
+    newTag: ${IMAGE_TAG}
