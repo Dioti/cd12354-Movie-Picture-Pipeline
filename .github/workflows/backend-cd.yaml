@@ -9,7 +9,7 @@ on:
 env:
   AWS_REGION: us-east-1
   IMAGE_NAME: mp-backend
-  CLUSTER_NAME: mp-backend-cluster
+  CLUSTER_NAME: backend
 
 defaults:
   run:
