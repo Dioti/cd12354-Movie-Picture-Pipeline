@@ -9,8 +9,8 @@ on:
 env:
   PYTHON_VERSION: 3.9
   AWS_REGION: us-east-1
-  IMAGE_NAME: mp-backend
-  CLUSTER_NAME: backend
+  IMAGE_NAME: backend
+  CLUSTER_NAME: cluster
 
 defaults:
   run:

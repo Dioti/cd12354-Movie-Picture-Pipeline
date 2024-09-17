@@ -10,8 +10,8 @@ env:
   NODE_VERSION: 18.x
   REACT_APP_MOVIE_API_URL: http://a871176af3b0e4a10a6acf588cf4fcf4-2093629547.us-east-1.elb.amazonaws.com
   AWS_REGION: us-east-1
-  IMAGE_NAME: mp-frontend
-  CLUSTER_NAME: frontend
+  IMAGE_NAME: frontend
+  CLUSTER_NAME: cluster
 
 defaults:
   run:
